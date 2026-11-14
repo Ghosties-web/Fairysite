@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First HTML Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+          max-width: 900px;
+          margin: 0 auto;
+          text-align: center;
+        }
+        table {
+            margin: 0 auto;
+            background-color: #d12e90;
+            }
+            ul {
+                list-style-position: inside;
+                padding: 0;
+            }
+            h1 {
+                color: rgb(89, 225, 187);
+            }
+            .transition-button {
+                background-color: #9d4caf;
+                padding: 10px 20px;
+                border: none;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+            .transition-button:hover {
+                background-color: #ff69b4;
+            }
+            .animation-box {
+               position: relative;
+                animation: move 2s infinite alternate;
+            }
+            @keyframes move {
+                from { left: 0; }
+                to { left: 100px; }
+            }
+            .pseudo-list li:nth-child(odd) {
+                background-color: rgb(238, 73, 200);
+            }
+            .pseudo-list li:nth-child(even) {
+                background-color: #a81993;
+            }
+            .pseudo-list li {
+                font-weight: bold;
+            }
+            .filter-image {
+                filter: grayscale(100%);
+            transition: filter 0.3s ease;
+            }
+            .filter-image:hover {
+                filter: grayscale(0%);
+            }
+            .quote {
+                position: relative;
+                padding-left: 20px;
+                font-style: italic;
+            }
+            .quote::before {
+                content: "“";
+                position: absolute;
+                left: 0;
+                top: 0;
+                color:#ff69b4
+            }
+           .content-box {
+    position: relative;
+    isolation: isolate;
+    background-color: rgb(236, 184, 218);
+    border-radius: 100px;
+    padding: 50px 60px;
+    margin-top: 80px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+.content-box::before,
+.content-box::after {
+    content: '';
+    position: absolute;
+    background-color: rgb(236, 184, 218);
+    border-radius: 50%;
+    z-index: -1;
+}
+.content-box::before,
+.content-box::after {
+    width: 90px;
+    height: 90px;
+    top: -40px;
+}
+.content-box::before {
+    left: 88px;
+}
+.content-box::after {
+    right: 88px;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+.grid-item {
+    background-color: #d12e90;
+    padding: 20px;
+    text-align: center;
+}   
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+    .flex-item {
+        background-color: #b40c70;
+        padding: 20px;
+        text-align: center;
+    }   
+    .responsive-box {
+            padding: 20px;
+            text-align: center;
+        }
+        @media (max-width: 600px) {
+            .responsive-box {
+                background-color: lightpink;    
+            }
+        }  
+        @media (min-width: 601px) {
+            .responsive-box {
+                background-color: plum;
+            }
+        }  
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="color: rgb(191, 28, 223);">Welcome to Maria's Page</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#hobbies">My Hobbies</a></li>
+                <li><a href="#courses">My Ongoing Courses</a></li>
+                <li><a href="#contact">Contact Form</a></li>
+            </ul>
+        </nav>
+    </header>
+<main>
+    <section>
+        <h2>Ways towards a Better Life</h2>
+        <div class="grid-container">
+            <div class="grid-item">Try to be your best self</div>
+            <div class="grid-item">Try to travel the world</div>
+            <div class="grid-item">Enjoy the little things in life</div>
+            <div class="grid-item">Do things that make you happy</div>
+            <div class="grid-item">Eat things you enjoy</div>
+            <div class="grid-item">Try new things</div>
+        </div>
+    </section>
+    <section>
+        <h2>What should we truly value doing?</h2>
+        <div class="flex-container">
+            <div class="flex-item">Be kind to yourself</div>
+            <div class="flex-item">Be kind to others</div>
+            <div class="flex-item">Be kind to the world</div>
+        </div>
+    </section>
+    <section> 
+        <h2>Media Query</h2>
+        <div class="responsive-box">What are YOU going to do for a better life?</div>
+        
+    </section>
+        <h2>My Favorite Quote</h2>
+        <blockquote>"𝖄𝖔𝖚 𝖘𝖍𝖔𝖚𝖑𝖉 𝖑𝖎𝖛𝖊 𝖞𝖔𝖚𝖗 𝖑𝖎𝖋𝖊 𝖙𝖔 𝖙𝖍𝖊 𝖋𝖚𝖑𝖑𝖊𝖘𝖙."</blockquote>
+    <div class="content-box">
+        <section id="about">
+        <h3 style="color:purple;">About Me</h3>
+         <p>Hi, I'm Maria! I study information and communication technology at Varia,
+     while I do part of the cybersecurity course at Laurea. In my free time 
+     I love to play relaxing games and hanging out with my friends. 
+     My favorite food is sushi and I also love water. I have two tattoos, 
+     but definitely want way more & one of them is from one of my favorite shows Supernatural.</p>
+        </section>
+    </div>
+    <img src="images/ME.jpeg" alt="Photo of Maria" width="200" height="300">
+    <section>
+    <h2 id="hobbies">My Hobbies</h2>
+    <ul>
+        <li>Playing games</li>
+        <li>Working out</li>
+        <li>Baking</li>
+    </ul>
+    </section>
+    <h2>My Favorite Web Page</h2>
+    <p><a href="https://www.youtube.com">YouTube</a></p>
+    <section id="courses">
+    <h2>My Ongoing Courses</h2>
+    <table>
+        <tr>
+            <th>Course</th>
+            <th>Institution</th>
+        </tr>
+        <tr>
+            <td>Web Site Development</td>
+            <td>Laurea</td>
+        </tr>
+        <tr>
+            <td>Basic of Digital Service</td>
+            <td>Laurea</td>
+        </tr>
+        <tr>
+            <td>Basic of ICT Infrastructure and Cloud Services</td>
+            <td>Laurea</td>
+        </tr>
+        <tr>
+            <td>Effective Communication and Project Work</td>
+            <td>Laurea</td>
+        </tr>
+        <tr>
+            <td>Information and Communication Technology</td>
+            <td>Varia</td>
+        </tr>
+    </table>
+    </section>
+    <section id="contact">
+<h2>Contact Form</h2>
+<form>
+    <label for="name">Name:</label>
+<input type="text" id="name" name="name"><br><br>
+<label for="email">Email:</label>
+<input type="email" id="email" name="email"><br><br>
+<input type="submit" value="Submit">
+</form>
+<button class="transition-button">Check this out!</button>
+<div class="animation-box">ﮩ٨ـﮩﮩ٨ـ♡ﮩ٨ـﮩﮩ٨ـ</div>
+<ul class="pseudo-list">
+    <li>Listen to music</li>
+    <li>Play games</li>
+    <li>Have fun with friends</li>
+    <li>Always do things you truly enjoy doing</li>
+</ul>
+<img src="images/ME.jpeg" alt="Photo of Maria" class="filter-image" width="200" height="300">
+<blockquote class="quote">"𝖄𝖔𝖚 𝖘𝖍𝖔𝖚𝖑𝖉 𝖑𝖎𝖛𝖊 𝖞𝖔𝖚𝖗 𝖑𝖎𝖋𝖊 𝖙𝖔 𝖙𝖍𝖊 𝖋𝖚𝖑𝖑𝖊𝖘𝖙."</blockquote>
+    </section>
+</main>
+<footer>
+    <p>Copyright 2026 Maria</p>
+</footer>
+    </body>
+</html>
